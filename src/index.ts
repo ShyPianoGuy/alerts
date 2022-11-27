@@ -1,11 +1,9 @@
+import config from './config';
 import { Server } from "./server";
 
 export class Client {
-  server: Server;
-
-  constructor() {
-    this.server = new Server();
-  }
+  server = new Server();
+  config = config
 }
 
 new Client();

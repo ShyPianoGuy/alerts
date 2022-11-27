@@ -8,6 +8,10 @@
   "license": "MIT",
   "private": true,
   "dependencies": {
-    "discord-api-types": "^0.37.20"
+    "discord-api-types": "^0.37.20",
+    "dotenv": "^16.0.3"
+  },
+  "devDependencies": {
+    "@types/node": "^18.11.9"
   }
 }
