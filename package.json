@@ -1,0 +1,10 @@
+{
+  "name": "alerts",
+  "version": "1.0.0",
+  "description": "Discord Bot",
+  "main": "src/index.ts",
+  "repository": "https://github.com/ShyPianoGuy/alerts.git",
+  "author": "ShyPianoGuy <devinjahr32@gmail.com>",
+  "license": "MIT",
+  "private": true
+}
