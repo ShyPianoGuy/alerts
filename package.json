@@ -7,6 +7,10 @@
   "author": "ShyPianoGuy <devinjahr32@gmail.com>",
   "license": "MIT",
   "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
   "dependencies": {
     "discord-api-types": "^0.37.20",
     "dotenv": "^16.0.3",
