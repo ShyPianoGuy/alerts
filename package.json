@@ -9,9 +9,13 @@
   "private": true,
   "dependencies": {
     "discord-api-types": "^0.37.20",
-    "dotenv": "^16.0.3"
+    "dotenv": "^16.0.3",
+    "eslint": "^9.35.0"
   },
   "devDependencies": {
-    "@types/node": "^18.11.9"
+    "@eslint/js": "^9.35.0",
+    "@types/node": "^18.11.9",
+    "typescript": "^5.9.2",
+    "typescript-eslint": "^8.43.0"
   }
 }
