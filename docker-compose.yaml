@@ -1,0 +1,52 @@
+version: '3.8'
+services:
+  web:
+    image: alerts-web:latest
+    build: ./apps/web/
+    ports:
+      - "80:80"
+    volumes:
+      - ./apps/web/:/app/static
+    networks:
+      - alerts-network
+
+  api:
+    image: alerts-api:latest
+    build: ./apps/api/
+    environment:
+      - APP_ENV=production
+      - APP_DEBUG=false
+      - DATABASE_URL=postgresql://myuser:mypassword@db:5432/mydatabase
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./apps/api/:/app/api
+    depends_on:
+      - db
+    networks:
+      - alerts-network
+
+  discord-bot:
+    image: alerts-discord:latest
+    build: ./apps/discord_alerts/
+    environment:
+      - APP_ENV=production
+      - APP_DEBUG=false
+    volumes:
+      - ./apps/discord_alerts/:/app/discord_alerts
+
+    depends_on:
+      - db
+    networks:
+      - alerts-network
+
+  db:
+    image: postgres:latest
+    environment:
+      - POSTGRES_USER=myuser
+      - POSTGRES_PASSWORD=mypassword
+      - POSTGRES_DB=mydatabase
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    networks:
+      - alerts-network
